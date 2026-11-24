@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2fb">
+  <meta name="description" content="Findly brings lost things and the people looking for them back together.">
+  <title>Findly — good things find their way back</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main id="auth-view" class="auth-view">
+    <section class="auth-story">
+      <a class="brand brand-light" href="/" aria-label="Findly home"><span class="brand-mark">f.</span> findly</a>
+      <div class="story-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> A little more human, a little less lost</span>
+        <h1>Good things<br>find their way <em>back.</em></h1>
+        <p>Lost your keys? Found someone’s favorite book? You’re in the right place. Let’s bring people and their things back together.</p>
+        <div class="story-proof">
+          <div class="avatar-stack" aria-hidden="true"><span>J</span><span>M</span><span>A</span><span>+</span></div>
+          <span><strong>2,400+</strong> things reunited this month</span>
+        </div>
+      </div>
+      <div class="story-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-note note-top"><span class="note-icon note-yellow">✳</span><span><b>Found!</b><small>Blue notebook · Library</small></span><i>↗</i></div>
+        <div class="art-center"><span class="art-sparkle">✳</span><span class="art-path"></span><span class="art-heart">♡</span></div>
+        <div class="floating-note note-bottom"><span class="note-icon note-peach">⌕</span><span><b>Looking for...</b><small>My favorite blue notebook</small></span><i>↗</i></div>
+      </div>
+      <div class="story-footer"><span>Made for the things that matter.</span><span>01 — 03</span></div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-topline"><span>Already part of the community?</span><button class="text-button" id="show-register">Create account <span>↗</span></button></div>
+      <div class="auth-card">
+        <div class="mobile-brand"><a class="brand" href="/" aria-label="Findly home"><span class="brand-mark">f.</span> findly</a></div>
+        <div id="login-form-wrap">
+          <div class="form-heading"><span class="form-kicker">WELCOME BACK</span><h2>Find your way in.</h2><p>Pick up right where you left off.</p></div>
+          <div class="auth-tabs" role="tablist" aria-label="Sign in method">
+            <button class="auth-tab active" data-tab="password" role="tab" aria-selected="true">Password</button>
+            <button class="auth-tab" data-tab="otp" role="tab" aria-selected="false">One-time code <span class="new-tag">EASY</span></button>
+          </div>
+          <form id="password-form" class="auth-form">
+            <label>Email address<input name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label>
+            <label>Password<span class="password-field"><input name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button type="button" class="show-password" aria-label="Show password">Show</button></span></label>
+            <button class="button button-dark button-full" type="submit">Sign in <span>→</span></button>
+          </form>
+          <form id="otp-form" class="auth-form hidden">
+            <label>Phone number<input name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" inputmode="tel" required></label>
+            <div id="otp-code-wrap" class="hidden"><label>6-digit code<input name="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" autocomplete="one-time-code"></label></div>
+            <p class="otp-help">Use the Indian phone number linked to your account. Your six-digit code expires in 5 minutes.</p>
+            <p id="otp-status" class="otp-status hidden" role="status" aria-live="polite"></p>
+            <button class="button button-dark button-full" type="submit" id="otp-submit">Send me a code <span>→</span></button>
+          </form>
+          <div class="form-divider"><span>OR</span></div>
+          <p class="switch-copy">New around here? <button class="inline-button" id="show-register-inline">Create a free account</button></p>
+          <p class="form-legal">By continuing, you agree to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+        </div>
+        <div id="register-form-wrap" class="hidden">
+          <div class="form-heading"><span class="form-kicker">YOU BELONG HERE</span><h2>Let’s get you started.</h2><p>A good neighbor is just a sign-up away.</p></div>
+          <form id="register-form" class="auth-form register-form">
+            <label>Your name<input name="name" type="text" placeholder="What should we call you?" autocomplete="name" minlength="2" maxlength="60" required></label>
+            <label>Email address<input name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label>
+            <label>Indian phone number<input name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" inputmode="tel" required></label>
+            <label>Create a password<input name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" maxlength="128" required></label>
+            <button class="button button-dark button-full" type="submit">Create my account <span>→</span></button>
+          </form>
+          <p class="switch-copy register-switch">Already have an account? <button class="inline-button" id="show-login">Sign in</button></p>
+          <p class="form-legal">By joining, you agree to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+        </div>
+      </div>
+      <div class="auth-bottom"><span>© 2026 Findly</span><span><i class="secure-dot"></i> Your community, your privacy</span></div>
+    </section>
+  </main>
+
+  <main id="dashboard-view" class="dashboard-view hidden">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Findly home"><span class="brand-mark">f.</span> findly</a>
+      <div class="workspace-label">YOUR SPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link selected" href="#dashboard" data-view="overview"><span class="nav-icon">⌂</span> Overview</a>
+        <a class="nav-link" href="#browse" data-view="browse"><span class="nav-icon">⌕</span> Browse items <span class="nav-count" id="browse-count">0</span></a>
+        <a class="nav-link" href="#my-posts" data-view="my-posts"><span class="nav-icon">▤</span> My posts</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-tip"><span class="tip-sparkle">✳</span><strong>A small act can mean a lot.</strong><p>Every item you return makes someone’s day.</p><span class="tip-flower">✿</span></div>
+      <button class="profile-button" id="profile-button"><span class="profile-avatar" id="profile-avatar">F</span><span class="profile-details"><strong id="profile-name">Friend</strong><small id="profile-contact">you@example.com</small></span><span class="profile-menu">···</span></button>
+    </aside>
+    <section class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="mobile-dashboard-brand"><a class="brand" href="/" aria-label="Findly home"><span class="brand-mark">f.</span> findly</a></div>
+        <div class="breadcrumb">Your space <span>/</span> <strong>Overview</strong></div>
+        <div class="header-actions"><button class="icon-button notification-button" aria-label="Notifications">♧<span></span></button><button class="button button-dark header-post" id="open-post"><span>＋</span> Post an item</button></div>
+      </header>
+      <div class="dashboard-content">
+        <div class="welcome-row"><div><div class="date-label" id="today-label">MONDAY, OCTOBER 28</div><h1>Good morning, <span id="welcome-name">friend</span> <span class="wave">✳</span></h1><p>Here’s what’s happening in your community today.</p></div><div class="community-pill"><span class="community-avatars"><i>M</i><i>J</i><i>A</i></span><span><strong>128</strong> neighbors nearby</span><span class="online-dot"></span></div></div>
+        <div class="stats-grid">
+          <article class="stat-card stat-highlight"><div class="stat-top"><span>Things reunited</span><span class="stat-icon mint">↗</span></div><strong>2,418</strong><div class="stat-foot"><span class="trend">↑ 12%</span> <span>vs. last month</span><span class="mini-chart chart-mint">▁▃▂▅▄▇▆</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Still looking</span><span class="stat-icon lavender">⌕</span></div><strong>36</strong><div class="stat-foot"><span class="trend">↓ 8%</span> <span>from last week</span><span class="mini-chart chart-lavender">▃▂▅▃▆▄▇</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Recently found</span><span class="stat-icon peach">✳</span></div><strong>19</strong><div class="stat-foot"><span class="trend">↑ 4</span> <span>in the last 7 days</span><span class="mini-chart chart-peach">▂▅▃▆▄▅▇</span></div></article>
+        </div>
+        <div class="content-grid">
+          <section class="listings-section">
+            <div class="section-heading"><div><span class="section-kicker">THE COMMUNITY BOARD</span><h2><span id="listings-title">Recent activity</span> <span class="live-pill" id="live-pill"><i></i> LIVE</span></h2></div><button class="view-all" id="browse-all">Browse all <span>→</span></button></div>
+            <div class="listing-filters"><button class="filter-chip active" data-filter="All">All items <span id="all-count">06</span></button><button class="filter-chip" data-filter="Lost">Lost</button><button class="filter-chip" data-filter="Found">Found</button><div class="search-wrap"><span>⌕</span><input id="search-items" type="search" placeholder="Search items..." aria-label="Search items"></div></div>
+            <div class="listing-list" id="listing-list"></div>
+          </section>
+          <aside class="dashboard-aside">
+            <article class="post-card"><span class="post-card-icon">✳</span><span class="section-kicker">A LITTLE GOES A LONG WAY</span><h3>Found something<br>that isn’t yours?</h3><p>Post it here. Its owner might be just around the corner.</p><button class="button button-dark button-full" id="open-post-card">Share a found item <span>→</span></button><span class="post-card-doodle">↗</span></article>
+            <article class="tip-card"><div class="tip-heading"><span>✦</span> COMMUNITY NOTE <span>✦</span></div><h3>“The best things<br>come back around.”</h3><p>Keep an eye on nearby listings. A tiny clue could be exactly what someone needs.</p><div class="tip-signature">A note from Findly <span>♡</span></div></article>
+          </aside>
+        </div>
+        <footer class="dashboard-footer"><span>Made with care, for the things we care about. <span>♡</span></span><span>Findly community <i class="online-dot"></i></span></footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop hidden" id="post-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-card"><button class="modal-close" id="close-post" aria-label="Close">×</button><span class="form-kicker">HELP SOMETHING FIND ITS WAY</span><h2 id="modal-title">Post an item</h2><p class="modal-intro">A few details can make all the difference.</p>
+      <form id="item-form" class="item-form">
+        <div class="type-toggle"><label><input type="radio" name="type" value="Lost" checked><span>⌕ I lost something</span></label><label><input type="radio" name="type" value="Found"><span>✳ I found something</span></label></div>
+        <label>What is it called?<input name="title" type="text" placeholder="e.g. Blue canvas tote bag" minlength="3" maxlength="80" required></label>
+        <div class="form-row"><label>Category<select name="category" required><option value="">Choose one</option><option>Accessories</option><option>Books</option><option>Electronics</option><option>Keys</option><option>Clothing</option><option>Other</option></select></label><label>Date<input name="date" type="date" required></label></div>
+        <label>Where was it lost or found?<input name="location" type="text" placeholder="A nearby place or landmark" maxlength="100" required></label>
+        <label>Any details that could help?<textarea name="description" placeholder="Color, identifying details, or where you last saw it..." minlength="8" maxlength="500" rows="3" required></textarea></label>
+        <button class="button button-dark button-full" type="submit">Post to the community <span>→</span></button>
+      </form>
+    </div>
+  </div>
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
